@@ -1,10 +1,15 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/vundle.git/        	#vundleのディレクトリ
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
-# Bundle 'Shougo/neocomplcache'		#Bundle...は使用するプラグインを書く。詳細はguthubのREADMEが詳しい。
-# Bundle 'Shougo/unite.vim'
-# Bundle 'thinca/vim-ref'
-# Bundle 'thinca/vim-quickrun'
-filetype plugin indent on     " required!
+" 挿入モードで入力中、様々な補完候補を元に自動的にポップアップ表示してくれる.
+Bundle 'Shougo/neocomplcache' 
+" Vim用のコマンドラインランチャー（Windowsで言えばfenrir、Macで言えばQuicksilver）のようなもの
+Bundle 'Shougo/unite.vim'
+" vim-ref は phpmanual 等のリファレンスをvim上で見るためのプラグインです。
+Bundle 'thinca/vim-ref'
+" プログラム実効プラグイン
+Bundle 'thinca/vim-quickrun'
+" required!
+filetype plugin indent on
