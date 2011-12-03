@@ -3,29 +3,46 @@ filetype off
 
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
-" 挿入モードで入力中、様々な補完候補を元に自動的にポップアップ表示してくれる.
+"挿入モードで入力中、様々な補完候補を元に自動的にポップアップ表示してくれる.
 Bundle 'Shougo/neocomplcache' 
-" Vim用のコマンドラインランチャー（Windowsで言えばfenrir、Macで言えばQuicksilver）のようなもの
+"Vim用のコマンドラインランチャー（Windowsで言えばfenrir、Macで言えばQuicksilver）のようなもの
 Bundle 'Shougo/unite.vim'
-" vim-ref は phpmanual 等のリファレンスをvim上で見るためのプラグインです。
+"vim-ref は phpmanual 等のリファレンスをvim上で見るためのプラグインです。
 Bundle 'thinca/vim-ref'
-" プログラム実効プラグイン
+"プログラム実効プラグイン
 Bundle 'thinca/vim-quickrun'
 
-Bundle 'IndentAnything'
+"ruby
+"Bundle 'vim-ruby/vim-ruby'
+"Bundle 'tpope/vim-rails'
 
-" ruby
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-
-" js
+"js
 Bundle 'JavaScript-syntax'
-"Bundle 'itspriddle/vim-javascript-indent'
-Bundle 'Better-CSS-Syntax-for-Vim'
 Bundle 'Better-Javascript-Indentation'
+Bundle 'basyura/jslint.vim'
+
+"web
+Bundle 'Better-CSS-Syntax-for-Vim'
 
 " required!
 filetype plugin indent on
+
+
+"#################################
+" JavaScript
+"#################################
+" - jslint.vim
+function! s:javascript_filetype_settings()
+  autocmd BufLeave     <buffer> call jslint#clear()
+  autocmd BufWritePost <buffer> call jslint#check()
+  autocmd CursorMoved  <buffer> call jslint#message()
+endfunction
+autocmd FileType javascript call s:javascript_filetype_settings()
+
+" - tab
+au FileType javascript set ts=4 sw=4 expandtab
+au BufNewFile *.js set ft=javascript fenc=utf-8
+
 
 " #################################
 " NeoComplCache Setting
@@ -114,4 +131,5 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+ 
 
