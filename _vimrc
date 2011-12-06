@@ -19,7 +19,7 @@ Bundle 'thinca/vim-quickrun'
 "js
 Bundle 'JavaScript-syntax'
 Bundle 'Better-Javascript-Indentation'
-Bundle 'basyura/jslint.vim'
+Bundle 'jslint.vim'
 
 "web
 Bundle 'Better-CSS-Syntax-for-Vim'
