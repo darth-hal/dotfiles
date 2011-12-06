@@ -40,7 +40,7 @@ endfunction
 autocmd FileType javascript call s:javascript_filetype_settings()
 
 " - tab
-au FileType javascript set ts=4 sw=4 expandtab
+au FileType javascript set ts=2 sw=2 expandtab
 au BufNewFile *.js set ft=javascript fenc=utf-8
 
 
