@@ -20,9 +20,10 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'JavaScript-syntax'
 Bundle 'Better-Javascript-Indentation'
 Bundle 'jslint.vim'
+Bundle 'node.js'
 
 "web
-Bundle 'Better-CSS-Syntax-for-Vim'
+"Bundle 'Better-CSS-Syntax-for-Vim'
 
 " required!
 filetype plugin indent on
@@ -32,12 +33,13 @@ filetype plugin indent on
 " JavaScript
 "#################################
 " - jslint.vim
-function! s:javascript_filetype_settings()
-  autocmd BufLeave     <buffer> call jslint#clear()
-  autocmd BufWritePost <buffer> call jslint#check()
-  autocmd CursorMoved  <buffer> call jslint#message()
-endfunction
-autocmd FileType javascript call s:javascript_filetype_settings()
+"function! s:javascript_filetype_settings()
+"  autocmd BufLeave     <buffer> call jslint#clear()
+"  autocmd BufWritePost <buffer> call jslint#check()
+"  autocmd CursorMoved  <buffer> call jslint#message()
+"endfunction
+"autocmd FileType javascript call s:javascript_filetype_settings()
+let g:JSLintHighlightErrorLine = 0
 
 " - tab
 au FileType javascript set ts=2 sw=2 expandtab
