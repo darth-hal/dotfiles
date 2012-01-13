@@ -16,11 +16,15 @@ Bundle 'thinca/vim-quickrun'
 "Bundle 'vim-ruby/vim-ruby'
 "Bundle 'tpope/vim-rails'
 
-"js
-Bundle 'JavaScript-syntax'
-Bundle 'Better-Javascript-Indentation'
-Bundle 'jslint.vim'
-Bundle 'node.js'
+"JavaScript / node.js関連
+" - 要設定？
+Bundle 'pangloss/vim-javascript'
+" - 設定不要
+Bundle 'hallettj/jslint.vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'wavded/vim-stylus'
+Bundle 'jamescarr/snipmate-nodejs'
+Bundle 'guileen/vim-node'
 
 "web
 "Bundle 'Better-CSS-Syntax-for-Vim'
@@ -39,7 +43,7 @@ filetype plugin indent on
 "  autocmd CursorMoved  <buffer> call jslint#message()
 "endfunction
 "autocmd FileType javascript call s:javascript_filetype_settings()
-let g:JSLintHighlightErrorLine = 0
+"let g:JSLintHighlightErrorLine = 1
 
 " - tab
 au FileType javascript set ts=2 sw=2 expandtab
