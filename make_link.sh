@@ -3,7 +3,7 @@
 git submodule init
 git submodule update
 
-ln -s ${PWD}/.bashrc ~/.bashrc
-ln -s ${PWD}/.profile ~/.profile
-ln -s ${PWD}/.vimrc ~/.vimrc
-ln -s ${PWD}/.vim ~/.vim
+ln -si ${PWD}/.bashrc ~/.bashrc
+ln -si ${PWD}/.profile ~/.profile
+ln -si ${PWD}/.vimrc ~/.vimrc
+ln -si ${PWD}/.vim ~/.vim
