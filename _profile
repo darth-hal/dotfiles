@@ -25,19 +25,4 @@ export LC_MESSAGES="ja_JP.UTF-8"
 export LC_CTYPE="ja_JP.UTF-8"
 export LC_COLLATE="ja_JP.UTF-8"
 
-# for RVM
-if [ -f ~/.rvm/scripts/rvm ]; then
-    . ~/.rvm/scripts/rvm # Load RVM into a shell session *as a function*
-fi
-
-# for NVM
-if [ -f ~/.nvm/nvm.sh ]; then
-    . ~/.nvm/nvm.sh
-fi
-
-# for WebStorm
-if [ -d ~/local/jdk1.7.0_02 ]; then
-    WEBIDE_JDK='~/local/jdk1.7.0_02'
-fi
-
 
