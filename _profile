@@ -31,7 +31,12 @@ if [ -d "$HOME/local/jdk1.7.0_02" ]; then
     WEBIDE_JDK="$HOME/local/jdk1.7.0_02"
 fi
 # for Android
-if [ -d "$HOME/local/android-sdk-linux/" ]; then
+if [ -d "$HOME/local/android-sdk-linux" ]; then
     export ANDROID_HOME="$HOME/local/android-sdk-linux"
     PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+fi
+# for ANT
+if [ -d "$HOME/local/apache-ant-1.8.2" ]; then
+    export ANT_HOME="$HOME/local/apache-ant-1.8.2"
+    PATH="$ANT_HOME/bin:$PATH"
 fi
