@@ -40,3 +40,9 @@ if [ -d "$HOME/local/apache-ant-1.8.2" ]; then
     export ANT_HOME="$HOME/local/apache-ant-1.8.2"
     PATH="$ANT_HOME/bin:$PATH"
 fi
+
+# for MAVEN
+if [ -d "$HOME/local/apache-maven-3.0.4" ]; then
+    export MAVEN_HOME="$HOME/local/apache-maven-3.0.4"
+    PATH="$MAVEN_HOME/bin:$PATH"
+fi
