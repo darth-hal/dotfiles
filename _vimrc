@@ -38,18 +38,27 @@ filetype plugin indent on
 "#################################
 " JavaScript
 "#################################
-" - jslint.vim
-"function! s:javascript_filetype_settings()
-"  autocmd BufLeave     <buffer> call jslint#clear()
-"  autocmd BufWritePost <buffer> call jslint#check()
-"  autocmd CursorMoved  <buffer> call jslint#message()
-"endfunction
-"autocmd FileType javascript call s:javascript_filetype_settings()
-"let g:JSLintHighlightErrorLine = 1
+" - JSLintの色が見づらいのを修正
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=magenta
 
-" - tab
-au FileType javascript set ts=2 sw=2 expandtab
+" - JavaScriptのフォーマット
+au FileType javascript set ts=2 sw=2 expandtab number
 au BufNewFile *.js set ft=javascript fenc=utf-8
+
+"#################################
+" Jade
+"#################################
+" - Jadeのフォーマット
+au FileType jade set=2 sw=2 expandtab number
+au BufNewFile *.jade set ft=jade fenc=utf-8
+
+
+"#################################
+" Global
+"#################################
+" - コメントの自動挿入をOFF
+autocmd FileType * setlocal formatoptions-=ro
 
 
 " #################################
