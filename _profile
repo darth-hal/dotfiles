@@ -46,3 +46,12 @@ if [ -d "$HOME/local/apache-maven-3.0.4" ]; then
     export MAVEN_HOME="$HOME/local/apache-maven-3.0.4"
     PATH="$MAVEN_HOME/bin:$PATH"
 fi
+# for sun java
+if [ -d "$HOME/local/jdk1.7.0_02" ]; then
+    export JAVA_HOME="$HOME/local/jdk1.7.0_02"
+    PATH="$JAVA_HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/local/jboss-as-7.0.2.Final" ]; then
+    export JBOSS_HOME="$HOME/local/jboss-as-7.0.2.Final"
+fi
