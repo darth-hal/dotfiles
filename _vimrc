@@ -50,7 +50,7 @@ au BufNewFile *.js set ft=javascript fenc=utf-8
 " Jade
 "#################################
 " - Jadeのフォーマット
-au FileType jade set=2 sw=2 expandtab number
+au FileType jade set ts=2 sw=2 expandtab number
 au BufNewFile *.jade set ft=jade fenc=utf-8
 
 
