@@ -26,10 +26,6 @@ export LC_CTYPE="ja_JP.UTF-8"
 export LC_COLLATE="ja_JP.UTF-8"
 
 
-# for WebStorm
-if [ -d "$HOME/local/jdk1.7.0_02" ]; then
-    WEBIDE_JDK="$HOME/local/jdk1.7.0_02"
-fi
 # for Android
 if [ -d "$HOME/local/android-sdk-linux" ]; then
     export ANDROID_HOME="$HOME/local/android-sdk-linux"
@@ -50,8 +46,22 @@ fi
 if [ -d "$HOME/local/jdk1.7.0_02" ]; then
     export JAVA_HOME="$HOME/local/jdk1.7.0_02"
     PATH="$JAVA_HOME/bin:$PATH"
+    WEBIDE_JDK="$HOME/local/jdk1.7.0_02"
 fi
-
+#for JBoss 7.0.2
 if [ -d "$HOME/local/jboss-as-7.0.2.Final" ]; then
     export JBOSS_HOME="$HOME/local/jboss-as-7.0.2.Final"
 fi
+
+# for postgresql
+if [ -d "$HOME/local/pgsql" ]; then
+    LD_LIBRARY_PATH="/usr/local/pgsql/lib"
+    export LD_LIBRARY_PATH
+
+    PATH="$HOME/local/pgsql/bin:$PATH"
+    export PATH
+
+    MANPATH="$HOME/local/pgsql/man:$MANPATH"
+    export MANPATH
+fi
+
