@@ -1,0 +1,7 @@
+" - 色指定
+colorscheme evening
+
+" 縦幅
+set lines=30
+" 横幅
+set columns=120

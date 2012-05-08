@@ -60,6 +60,22 @@ au BufNewFile *.jade set ft=jade fenc=utf-8
 " - コメントの自動挿入をOFF
 autocmd FileType * setlocal formatoptions-=ro
 
+"#################################
+" My Config
+"################################
+" - 行番号表示
+set number
+" - タブを空白
+set expandtab
+" - タブの幅
+set tabstop=4
+set softtabstop=4
+" ヤンクをクリップボードへ送り込む
+set clipboard+=unnamed
+"ルーラーを表示
+set ruler
+set title
+
 
 " #################################
 " NeoComplCache Setting
