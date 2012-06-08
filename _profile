@@ -47,7 +47,7 @@ fi
 if [ -d "$HOME/local/sun-jdk-1.6.0" ]; then
     export JAVA_HOME="$HOME/local/sun-jdk-1.6.0"
     PATH="$JAVA_HOME/bin:$PATH"
-    WEBIDE_JDK="$HOME/local/sun-jdk-1.6.0"
+    export JAVA_OPTS="-Djava.library.path=/usr/lib/jni"
 fi
 
 #for JBoss 7.0.2
