@@ -1,36 +1,29 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+if [ "${BASH-no}" != "no" ]; then
+	[ -r $HOME/.bashrc ] && . $HOME/.bashrc
+fi
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
+#mac用のコード
+if [ `uname` = "Darwin" ]; then
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    # set PATH so it includes user's private bin if it exists
+    if [ -d "$HOME/bin" ] ; then
+        PATH="$HOME/bin:$PATH"
     fi
-fi
+    export LANGUAGE="ja:en"
+    export LC_MESSAGES="ja_JP.UTF-8"
+    export LC_CTYPE="ja_JP.UTF-8"
+    export LC_COLLATE="ja_JP.UTF-8"
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+#Linux用のコード
+elif [ `uname` = "Linux" ]; then
 fi
-export LANGUAGE="ja:en"
-export LC_MESSAGES="ja_JP.UTF-8"
-export LC_CTYPE="ja_JP.UTF-8"
-export LC_COLLATE="ja_JP.UTF-8"
-
 
 # for Android
 if [ -d "$HOME/local/android-sdk-linux" ]; then
     export ANDROID_HOME="$HOME/local/android-sdk-linux"
     PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 fi
+
 # for ANT
 if [ -d "$HOME/local/ant" ]; then
     export ANT_HOME="$HOME/local/ant"
@@ -40,6 +33,7 @@ fi
 # for MAVEN
 if [ -d "$HOME/local/maven3" ]; then
     export MAVEN_HOME="$HOME/local/maven3"
+    export MAVEN_OPTS=-Dfile.encoding=utf-8
     PATH="$MAVEN_HOME/bin:$PATH"
 fi
 
@@ -67,3 +61,17 @@ if [ -d "$HOME/local/pgsql" ]; then
     export MANPATH
 fi
 
+# MySQL
+if [ -d $HOME/local/mysql ]; then
+    PATH=$HOME/local/mysql/bin:$PATH
+fi
+# nodebrew
+if [ -d $HOME/.nodebrew ]; then
+    PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
+
+# rvm
+if [ -d $HOME/.rvm ]; then
+    PATH=$PATH:$HOME/.rvm/bin
+fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
