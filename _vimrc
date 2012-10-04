@@ -18,6 +18,8 @@ Bundle 'thinca/vim-quickrun'
 "Bundle 'vim-ruby/vim-ruby'
 "Bundle 'tpope/vim-rails'
 
+Bundle 'Ambient-Color-Scheme'
+
 "JavaScript / node.js関連
 " - 要設定？
 Bundle 'pangloss/vim-javascript'
@@ -76,6 +78,7 @@ set clipboard+=unnamed
 set ruler
 set title
 
+syntax enable
 
 " #################################
 " NeoComplCache Setting

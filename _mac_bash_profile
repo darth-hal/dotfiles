@@ -1,0 +1,61 @@
+if [ "${BASH-no}" != "no" ]; then
+	[ -r $HOME/.bashrc ] && . $HOME/.bashrc
+fi
+
+# for Android
+if [ -d "$HOME/local/android-sdk-linux" ]; then
+    export ANDROID_HOME="$HOME/local/android-sdk-linux"
+    PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+fi
+
+# for ANT
+if [ -d "$HOME/local/ant" ]; then
+    export ANT_HOME="$HOME/local/ant"
+    PATH="$ANT_HOME/bin:$PATH"
+fi
+
+# for MAVEN
+if [ -d "$HOME/local/maven3" ]; then
+    export MAVEN_HOME="$HOME/local/maven3"
+    export MAVEN_OPTS=-Dfile.encoding=utf-8
+    PATH="$MAVEN_HOME/bin:$PATH"
+fi
+
+# for sun java
+if [ -d "$HOME/local/sun-jdk-1.6.0" ]; then
+    export JAVA_HOME="$HOME/local/sun-jdk-1.6.0"
+    PATH="$JAVA_HOME/bin:$PATH"
+    export JAVA_OPTS="-Djava.library.path=/usr/lib/jni"
+fi
+
+#for JBoss 7.0.2
+if [ -d "$HOME/local/jboss7" ]; then
+    export JBOSS_HOME="$HOME/local/jboss7"
+fi
+
+# for postgresql
+if [ -d "$HOME/local/pgsql" ]; then
+    LD_LIBRARY_PATH="/usr/local/pgsql/lib"
+    export LD_LIBRARY_PATH
+
+    PATH="$HOME/local/pgsql/bin:$PATH"
+    export PATH
+
+    MANPATH="$HOME/local/pgsql/man:$MANPATH"
+    export MANPATH
+fi
+
+# MySQL
+if [ -d $HOME/local/mysql ]; then
+    PATH=$HOME/local/mysql/bin:$PATH
+fi
+# nodebrew
+if [ -d $HOME/.nodebrew ]; then
+    PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
+
+# rvm
+if [ -d $HOME/.rvm ]; then
+    PATH=$PATH:$HOME/.rvm/bin
+fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
