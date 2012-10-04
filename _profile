@@ -13,9 +13,6 @@ if [ `uname` = "Darwin" ]; then
     export LC_MESSAGES="ja_JP.UTF-8"
     export LC_CTYPE="ja_JP.UTF-8"
     export LC_COLLATE="ja_JP.UTF-8"
-
-#Linux用のコード
-elif [ `uname` = "Linux" ]; then
 fi
 
 # for Android

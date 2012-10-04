@@ -82,7 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-if [`uname` = "Darwin" ]; then
+if [ `uname` = "Darwin" ]; then
 
     alias ls='ls -G'
     #alias ls='ls --color=auto'
@@ -127,8 +127,8 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 # for MacPort
-if [ -f /opt/local/share/doc/git-core/contrib/completion/git-completion.bash ]; then
-    source /opt/local/share/doc/git-core/contrib/completion/git-completion.bash
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
 fi
 
 # for NVM
